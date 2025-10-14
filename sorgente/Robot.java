@@ -31,13 +31,13 @@ public class Robot {
     //     return mappaEsplorata;
     // }
 
-    private static void stampaMappa(int[][] mappa) {
-        for (int i = 0; i < mappa.length; i++) {
-            for (int j = 0; j < mappa[i].length; j++) {
-                System.out.print(mappa[i][j] + ", ");
-            }
-            System.out.println();
-        }
-    }
+    // private static void stampaMappa(int[][] mappa) {
+    //     for (int i = 0; i < mappa.length; i++) {
+    //         for (int j = 0; j < mappa[i].length; j++) {
+    //             System.out.print(mappa[i][j] + ", ");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
 
 }

@@ -12,6 +12,7 @@ public class Bfs {
         queueColonne.add(posIniziale2);
 
         int[][] mappaBfs = bfs(mappaEsplorata, posFinale1, posFinale2);
+        stampaMappa(mappaBfs);
     }
 
     private int[][] bfs(int[][] mappaEsplorata, int posFinale1, int posFinale2) {

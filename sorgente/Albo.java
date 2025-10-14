@@ -29,7 +29,6 @@ public class Albo {
         queueColonne.add(posIniziale2);
 
         esploraMappa(posIniziale1, posIniziale2, posFinale1, posFinale2);
-        stampaMappa(mappa);
     }
     
 
