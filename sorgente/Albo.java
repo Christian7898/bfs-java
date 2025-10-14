@@ -14,7 +14,7 @@ public class Albo {
     private LinkedList<Integer> queueRighe;
     private LinkedList<Integer> queueColonne;
 
-    public Albo(int[][] mappa, int posIniziale1, int posIniziale2) {
+    public Albo(int[][] mappa, int posIniziale1, int posIniziale2, int posFinale1, int posFinale2) {
         this.mappa = mappa;
         this.Riga = new int[mappa.length][mappa[0].length];
         this.Colonna = new int[mappa.length][mappa[0].length];
@@ -28,11 +28,12 @@ public class Albo {
         queueRighe.add(posIniziale1);
         queueColonne.add(posIniziale2);
 
-        esploraMappa();
+        esploraMappa(posIniziale1, posIniziale2, posFinale1, posFinale2);
         stampaMappa(mappa);
     }
+    
 
-    private boolean esploraMappa() {
+    public int[][] esploraMappa(int posIniziale1, int posIniziale2, int posFinale1, int posFinale2) {
         int i,j;
         while (!queueRighe.isEmpty() && !queueColonne.isEmpty()) {
             i = queueRighe.removeFirst();
@@ -64,8 +65,9 @@ public class Albo {
                 queueColonne.add(j - 1);
             }
         }
-
-        return true;
+        
+        Bfs bfs = new Bfs(mappa, posIniziale1, posIniziale2, posFinale1, posFinale2);
+        return mappa;
     }
 
 

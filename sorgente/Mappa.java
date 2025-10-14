@@ -18,6 +18,6 @@ public class Mappa {
             //     }
             // }
 
-        Robot robot = new Robot(mappa, 0, 0);        
+        Robot robot = new Robot(mappa, 0, 0, 4, 4);        
     }
 }
