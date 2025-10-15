@@ -48,37 +48,38 @@ public class Albo {
             Posizioni pos = (Posizioni) coda.poll();
             int i;
             int j;
-            
+
             i = pos.getX();
             j = pos.getY();
-            
-            
-            if(i == posFinale1 && j == posFinale2){
+
+            if (i == posFinale1 && j == posFinale2) {
                 found = true;
             }
-            
+
             Posizioni Posnuova = new Posizioni();
-            
-            if (i + 1 < mappa.length && mappa[i + 1][j] != 1 && visitato[i+1][j] != true) {
-               coda.add( new Posizioni(i+1, j));
-            }
-            if (i - 1 >= 0 && mappa[i - 1][j] != 1&& visitato[i-1][j] != true) {
-               coda.add( new Posizioni(i-1, j));
-            }
-            if (j + 1 < mappa[i].length && mappa[i][j + 1] != 1 && visitato[i][j+1] != true) {
-               coda.add( new Posizioni(i, j+1));
 
+            if (i + 1 < mappa.length && mappa[i + 1][j] != 1 && visitato[i + 1][j] != true) {
+                visitato[i + 1][j] = true;
+                coda.add(new Posizioni(i + 1, j));
+            }
+            if (i - 1 >= 0 && mappa[i - 1][j] != 1 && visitato[i - 1][j] != true) {
+                visitato[i - 1][j] = true;
+                coda.add(new Posizioni(i - 1, j));
+            }
+            if (j + 1 < mappa[i].length && mappa[i][j + 1] != 1 && visitato[i][j + 1] != true) {
+                visitato[i][j + 1] = true;
+                coda.add(new Posizioni(i, j + 1));
             }
 
-            if (j - 1 >= 0 && mappa[i][j - 1] != 1 && visitato[i][j-1] != true) {
-                     coda.add( new Posizioni(i, j-1));
+            if (j - 1 >= 0 && mappa[i][j - 1] != 1 && visitato[i][j - 1] != true) {
+                visitato[i][j-1] = true;
+                coda.add(new Posizioni(i, j - 1));
             }
-            for (Posizioni p: coda ){
-               System.out.print("("+ p.getX() + ", " + p.getY()+ ")" );
+            for (Posizioni p : coda) {
+                System.out.print("(" + p.getX() + ", " + p.getY() + ")");
 
             }
             System.out.println();
-            visitato[i][j] = true;
 
         }
         return visitato;
@@ -115,8 +116,8 @@ public class Albo {
             }
         }
         System.out.println("MAPPA ESPLORATA: ");
-        for(int r = 0;r < mappa.length; r++){
-            for(int c = 0; c < mappa[r].length; c++){
+        for (int r = 0; r < mappa.length; r++) {
+            for (int c = 0; c < mappa[r].length; c++) {
                 System.out.print(mappa[r][c] + ", ");
             }
             System.out.println();
@@ -128,10 +129,10 @@ public class Albo {
         System.out.println();
         for (int i = 0; i < mappa.length; i++) {
             for (int j = 0; j < mappa[i].length; j++) {
-                if(mappa[i][j]){
+                if (mappa[i][j]) {
                     System.out.print("T" + ", ");
-                }else{
-                   System.out.print("F" + ", ");
+                } else {
+                    System.out.print("F" + ", ");
 
                 }
             }
