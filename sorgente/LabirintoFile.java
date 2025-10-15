@@ -3,8 +3,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class LabirintoFile {
-    File labirinto = new File("labirinto.txt");
-
+    String fileName = System.getProperty("user.dir") + "\\labirinto.txt";
+    File labirinto = new File(fileName);
+ 
     public LabirintoFile() {
     }
 
@@ -14,6 +15,7 @@ public class LabirintoFile {
             int line = 0;
             if (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
+
                 String[] parts = data.split("x");
                 size[0] = Integer.parseInt(parts[0].trim());
                 size[1] = Integer.parseInt(parts[1].trim());

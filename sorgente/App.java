@@ -1,5 +1,18 @@
-public class Mappa {
-    public static void main(String[] args){
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+
+/**
+ *
+ * @author Christian Di Fede
+ */
+public class App {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         LabirintoFile file = new LabirintoFile();
         int[] sizeLabirinto = file.getSize();
 
@@ -17,7 +30,9 @@ public class Mappa {
             //         }
             //     }
             // }
-
-        Robot robot = new Robot(mappa, 0, 0, 4, 4);        
+        Robot robot = new Robot(mappa, 0, 0, 4, 4);      
     }
+    
+    
+    
 }
